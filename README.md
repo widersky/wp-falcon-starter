@@ -7,8 +7,8 @@ Just start the right things! 🎉
 ## What's inside?
 
 * This theme uses ParcelJS as their bundler
-* SCSS
-* Bootstrap v4 grid (optional, you can disable it in ./src/css/01-vendors/_vendors.import.scss)
+* SCSS (with atomic-design oriented structure)
+* Bootstrap v4 grid `(optional, you can disable it in ./src/css/01-vendors/_vendors.import.scss)`
 * Vanilla JavaScript with ES6 enabled features (Babel inside) such as ... (complete)
 
 ## What's in functions.php?
