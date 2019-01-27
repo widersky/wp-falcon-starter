@@ -20,5 +20,8 @@
   "devDependencies": {
     "cssnano": "^4.1.8",
     "sass": "^1.16.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.2.1"
   }
 }
