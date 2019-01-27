@@ -8,9 +8,10 @@ Just start the right things! 🎉
 
 * This theme uses ParcelJS as their bundler
 * SCSS
+* Bootstrap v4 grid (optional, you can disable it in ./src/css/01-vendors/_vendors.import.scss)
 * Vanilla JavaScript with ES6 enabled features (Babel inside) such as ... (complete)
 
-## What's inside functions.php?
+## What's in functions.php?
 
 * Support for posts thumbnails
 * Disabled Gutenberg (I think it's necessary until Gutenberg it's *really* stable)
