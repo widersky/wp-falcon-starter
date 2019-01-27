@@ -6,3 +6,6 @@
 
 // Disable Gutenberg
 add_filter('use_block_editor_for_post', '__return_false', 10);
+
+// Enable post thumbnails in theme
+add_theme_support( 'post-thumbnails' ); 

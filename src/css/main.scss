@@ -9,3 +9,16 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wpst-theme
 */
+
+// Configs
+@import './00-config/config.variables';
+@import './00-config/config.mixins';
+
+// Vendors import
+@import './01-vendors/vendors.import';
+
+// Base
+@import './10-base/base.document';
+
+// Atoms
+@import './20-atoms/atom.button';

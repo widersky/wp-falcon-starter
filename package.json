@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/widersky/wp-starter-theme#readme",
   "devDependencies": {
+    "cssnano": "^4.1.8",
     "sass": "^1.16.1"
   }
 }
