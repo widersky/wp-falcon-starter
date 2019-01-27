@@ -20,7 +20,7 @@ Just start the right things! 🎉
 
 🛫 Start: `npm install -g parcel-bundler` ➡ `npm install`
 
-🛠 Develop: `parcel ./src/css/main.scss ./src/js/main.js` \
-👷‍ Build: `parcel build ./src/css/main.scss ./src/js/main.js`
+🛠 Develop: `npm run dev` \
+👷‍ Build: `npm run build`
 
 (WIP)

@@ -1,27 +1,28 @@
 {
-  "name": "wp-starter-theme",
-  "version": "1.0.0",
-  "description": "This is the WordPress starter theme developed to improve themes development process. The main reason to do this theme was make ability to start not from scratch but from that point of the project, what really matters. It's not necessary to invent the wheel every time.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/widersky/wp-starter-theme.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/widersky/wp-starter-theme/issues"
-  },
-  "homepage": "https://github.com/widersky/wp-starter-theme#readme",
-  "devDependencies": {
-    "cssnano": "^4.1.8",
-    "sass": "^1.16.1"
-  },
-  "dependencies": {
-    "bootstrap": "^4.2.1"
-  }
+    "name": "wp-starter-theme",
+    "version": "1.0.0",
+    "description": "This is the WordPress starter theme developed to improve themes development process. The main reason to do this theme was make ability to start not from scratch but from that point of the project, what really matters. It's not necessary to invent the wheel every time.",
+    "main": "",
+    "scripts": {
+        "dev": "parcel ./src/css/main.scss ./src/js/main.js",
+        "build": "parcel build ./src/css/main.scss ./src/js/main.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/widersky/wp-starter-theme.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/widersky/wp-starter-theme/issues"
+    },
+    "homepage": "https://github.com/widersky/wp-starter-theme#readme",
+    "devDependencies": {
+        "cssnano": "^4.1.8",
+        "sass": "^1.16.1"
+    },
+    "dependencies": {
+        "bootstrap": "^4.2.1"
+    }
 }
