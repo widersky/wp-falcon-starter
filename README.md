@@ -19,6 +19,9 @@ Just start the right things! 🎉
 
 * Support for posts thumbnails
 * Disabled Gutenberg `(I think it's necessary until Gutenberg it's *really* stable)`
+* For safety there is WP version and errors on login page removed
+* Custom thumbnail sizes
+* Enabled possibility to upload SVG files to media library
 
 ## How to
 
