@@ -1,13 +1,13 @@
-// import
+// import something
 
 class Main {
 
     constructor () {
-
+        this.version = '0.1 Beta';
     }
 
     init () {
-        console.log('JS initialised');
+        console.log('Hi! Everything looks good, feel free to edit this theme!');
     }
 
 }
