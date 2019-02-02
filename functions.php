@@ -13,13 +13,25 @@ add_theme_support('post-thumbnails');
 // Additional thumbnails sizes (name, x, y, hardmode?)
 add_image_size('sidebar-thumb', 640, 480, true);
 
-// Register styles and scripts
-$version = '0.1';
-$mainJS = get_template_directory_uri() . '/dist/js/main.js';
-$mainCSS = get_template_directory_uri() . '/style.css';
+// Add title tag support
+add_theme_support('title-tag');
 
-wp_enqueue_style('style', $mainCSS, $version, true);
-wp_enqueue_script('script', $mainJS, $version, true);
+// Register styles and scripts
+function enqueueStyles() {
+    $version = '0.2';
+    $mainJS = get_template_directory_uri() . '/dist/js/main.js';
+    $mainCSS = get_template_directory_uri() . '/style.css';
+
+    wp_enqueue_style('style', $mainCSS, $version, true);
+    wp_enqueue_script('script', $mainJS, $version, true);
+}
+add_action('wp_enqueue_scripts', 'enqueueStyles');
+
+// Register custom menus
+register_nav_menus(array(
+    'top'    => __('Main menu', 'wpst-theme'),
+    'footer' => __('Footer menu', 'wpst-theme')
+));
 
 // Add custom file types to upload
 function addFileTypes($fileTypes) {
