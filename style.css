@@ -1,1 +1,13 @@
+/*
+Theme Name: WordPress starter theme
+Theme URI: https://github.com/widersky/wp-starter-theme
+Author: Adrian Widerski
+Author URI: https://github.com/widersky/
+Description: A modern, but simple WordPress theme starter powered by ParcelJS, Babel, SCSS and pure JavaScript with ES6 enabled features. Feel free to build your own theme using this base.
+Version: 0.1 Beta
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wpst-theme
+*/
+
 @import './dist/css/main.css';
