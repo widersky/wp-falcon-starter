@@ -27,7 +27,14 @@ add_theme_support('post-thumbnails');
 
 
 // Additional thumbnails sizes (name, x, y, hardmode?)
-add_image_size('sidebar-thumb', 640, 480, true);
+add_image_size('size-4k', 3840, 2160, true);
+add_image_size('size-qhd', 2560, 1440, true);
+add_image_size('size-fullhd', 1920, 1080, true);
+add_image_size('size-hd', 1366, 768, true);
+add_image_size('size-xga', 1024, 768, true);
+add_image_size('size-svga', 800, 600, true);
+add_image_size('size-small', 640, 480, true);
+add_image_size('size-verysmall', 320, 240, true);
 
 
 // Add title tag support
@@ -76,9 +83,9 @@ add_filter('login_errors', 'removeWPLoginErrors');
 
 
 // Remove crap from head
-remove_action('wp_head', 'rsd_link');// Windows Live Writer remove
-remove_action('wp_head', 'wlwmanifest_link');// Windows Live Writer remove
-remove_action('wp_head', 'wp_generator');// Remove WP version
+remove_action('wp_head', 'rsd_link');                                   // Windows Live Writer remove
+remove_action('wp_head', 'wlwmanifest_link');                           // Windows Live Writer remove
+remove_action('wp_head', 'wp_generator');                               // Remove WP version
 
 
 // remove Emojis
@@ -93,7 +100,26 @@ remove_action( 'wp_head', 'wp_resource_hints', 2 );
 
 
 // Remove the REST API endpoint and other related things
-remove_action('rest_api_init', 'wp_oembed_register_route'); // endpoint
-remove_action('wp_head', 'rest_output_link_wp_head'); // rel='https://api.w.org/' out from head
-remove_action('wp_head', 'wp_oembed_add_discovery_links'); // REST from default filters
-remove_action('template_redirect', 'rest_output_link_header', 11); // REST link out from head
+remove_action('rest_api_init', 'wp_oembed_register_route');             // endpoint
+remove_action('wp_head', 'rest_output_link_wp_head');                   // rel='https://api.w.org/' out from head
+remove_action('wp_head', 'wp_oembed_add_discovery_links');              // REST from default filters
+remove_action('template_redirect', 'rest_output_link_header', 11);      // REST link out from head
+
+
+/**
+ * 
+ * Custom helpers
+ * 
+ */
+
+// Nicely show PHP objects
+function showMe($output) {
+    echo '<pre>';
+    print_r($showMe);
+    echo '</pre>';
+}
+
+// Builds and displays image in responsive-friendly format (with srcset attribute)
+function putIMG($imgID) {
+    // WIP
+}
