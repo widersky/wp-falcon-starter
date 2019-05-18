@@ -97,22 +97,3 @@ remove_action('rest_api_init', 'wp_oembed_register_route'); // endpoint
 remove_action('wp_head', 'rest_output_link_wp_head'); // rel='https://api.w.org/' out from head
 remove_action('wp_head', 'wp_oembed_add_discovery_links'); // REST from default filters
 remove_action('template_redirect', 'rest_output_link_header', 11); // REST link out from head
-
-
-/**
- *  
- *  Beautify WordPress markup
- * 
- */
-
-
-function moveScriptsToFooter() {
-    remove_action(‘wp_head’, ‘wp_print_scripts’);
-    remove_action(‘wp_head’, ‘wp_print_head_scripts’, 9);
-    remove_action(‘wp_head’, ‘wp_enqueue_scripts’, 1);
-    
-    add_action(‘wp_footer’, ‘wp_print_scripts’, 5);
-    add_action(‘wp_footer’, ‘wp_enqueue_scripts’, 5);
-    add_action(‘wp_footer’, ‘wp_print_head_scripts’, 5);
-}
-add_action( ‘wp_enqueue_scripts’, moveScriptsToFooter );

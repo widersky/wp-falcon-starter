@@ -6,10 +6,10 @@ Just start the right things! 🎉
 
 ## What's inside?
 
-* This theme uses ParcelJS as their bundler
+* This theme uses WebPack as their bundler
 * SCSS `(with atomic-design oriented structure)`
-* Bootstrap v4 grid `(optional, you can disable it in ./src/css/01-vendors/_vendors.import.scss)`
-* Vanilla JavaScript with ES6 enabled features (Babel inside) such as ... (complete)
+* Simple SCSS Framework based on Flexbox model
+* Vanilla JavaScript (Babel inside)
 
 ## What's **not** inside?
 
@@ -18,18 +18,23 @@ Just start the right things! 🎉
 ## What's in functions.php?
 
 * Support for posts thumbnails
+* Custom function for responsive images (srcset generation)
+* Stupidly simple function to view PHP objects nicely
 * Disabled Gutenberg `(I think it's necessary until Gutenberg it's *really* stable)`
 * For safety there is WP version and errors on login page removed
-* Custom thumbnail sizes
+* Disabled whole wp-head crap (Emojis, Gutenberg blocks CSS, REST API etc.)
+* Custom thumbnail sizes (most popular sizes included)
 * Enabled possibility to upload SVG files to media library
 
 ## How to
 
-🛫 Start: `npm install -g parcel-bundler` ➡ `npm install`
+🛫 Start: `npm install`
 
-🛠 Develop: `npm run dev` \
+🛠 Develop: `npm run start` \
 👷‍ Build: `npm run build`
 
-> You need to run `npm run build` or `npm run dev` task to make theme usable in browser (there is `dist/` folder disabled from repository)
+> You need to run `npm run build` or `npm run dev` task to make theme usable in browser (there are two `./*/dist/` folders disabled from repository)
 
-(WIP)
+## Questions? Suggestions?
+
+Feel free to 📨 me!
