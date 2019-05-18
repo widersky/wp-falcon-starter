@@ -1,4 +1,4 @@
-# 💻 WP Starter Theme
+# 🛫 WP Starter Theme
 
 This is the WordPress starter theme developed to improve themes development process. The main reason to do this theme was make ability to start not from scratch but from that point of the project, what really matters. It's not necessary to invent the wheel every time. 
 
