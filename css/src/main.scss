@@ -2,11 +2,17 @@
 @import './00-config/config.variables';
 @import './00-config/config.mixins';
 
+// Demo things (remove this line and related file, you won't need it)
+@import './01-vendors/vendors.demo';
+
 // Vendors import
 @import './01-vendors/vendors.import';
 
 // Base
 @import './10-base/base.document';
+@import './10-base/base.col';
+@import './10-base/base.row';
+@import './10-base/base.section';
 
 // Atoms
 @import './20-atoms/atom.button';
