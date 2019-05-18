@@ -2,27 +2,36 @@
     "name": "wp-starter-theme",
     "version": "1.0.0",
     "description": "This is the WordPress starter theme developed to improve themes development process. The main reason to do this theme was make ability to start not from scratch but from that point of the project, what really matters. It's not necessary to invent the wheel every time.",
-    "main": "",
+    "main": "index.js",
     "scripts": {
-        "dev": "parcel ./src/css/main.scss ./src/js/main.js",
-        "build": "parcel build ./src/css/main.scss ./src/js/main.js"
+        "build": "webpack --mode development",
+        "dist": "webpack --mode production",
+        "start": "webpack --watch --mode development"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/widersky/wp-starter-theme.git"
     },
     "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "author": "Adrian Widerski",
+    "license": "OpenSource",
     "bugs": {
         "url": "https://github.com/widersky/wp-starter-theme/issues"
     },
     "homepage": "https://github.com/widersky/wp-starter-theme#readme",
     "devDependencies": {
-        "cssnano": "^4.1.8",
-        "sass": "^1.16.1"
+        "@babel/core": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "babel-loader": "^8.0.6",
+        "babel-preset-env": "^1.7.0",
+        "css-loader": "^2.1.1",
+        "mini-css-extract-plugin": "^0.6.0",
+        "node-sass": "^4.12.0",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "sass-loader": "^7.1.0",
+        "uglifyjs-webpack-plugin": "^2.1.3",
+        "webpack": "^4.31.0",
+        "webpack-cli": "^3.3.2"
     },
-    "dependencies": {
-        "bootstrap": "^4.2.1"
-    }
+    "dependencies": {}
 }
