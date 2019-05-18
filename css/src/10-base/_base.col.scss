@@ -11,6 +11,7 @@ $i: 5;
 @while $i < 100 {
     .col-#{$i} {
         width: #{$i + '%'};
+        max-width: #{$i + '%'};
     }
 
     $i: $i + 5;
