@@ -7,7 +7,8 @@ class Main {
     }
 
     init () {
-        console.log('Hi! Everything looks good, feel free to edit this theme!');
+        console.log('🙋‍♂️ Welcome to WP Starter Theme v1.0!');
+        console.log('Everything looks good, feel free to edit this theme!');
     }
 
 }
