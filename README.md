@@ -6,7 +6,7 @@ Just start the right things! 🎉
 
 ## 📦 What's inside?
 
-* This theme uses WebPack as their bundler
+* This theme uses WebPack as their bundler (with live reload and browsersync enabled)
 * SCSS `(with atomic-design oriented structure)`
 * Simple SCSS Framework based on Flexbox model
 * Vanilla JavaScript (Babel inside)
@@ -28,6 +28,8 @@ Just start the right things! 🎉
 
 ## 💻 How to develop?
 
+First, change `config.url` to proper in `webpack.config.js` \
+\
 Start: `npm install` \
 Develop: `npm run start` \
 Build: `npm run build`

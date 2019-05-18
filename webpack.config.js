@@ -1,7 +1,12 @@
 const path = require('path');
 const UglifyJS = require('uglifyjs-webpack-plugin');
-const MiniCssExtract = require("mini-css-extract-plugin");
-const OptimizeCSSAssets = require("optimize-css-assets-webpack-plugin");
+const MiniCssExtract = require('mini-css-extract-plugin');
+const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
+const BrowserSync = require('browser-sync-webpack-plugin');
+
+const config = {
+    url: 'http://purewp.local/'
+}
 
 module.exports = {
     entry: ['./js/src/main.js', './css/src/main.scss'],
@@ -32,10 +37,35 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        historyApiFallback: true,
+        compress: true,
+        port: 9000,
+        https: config.url.indexOf('https') > -1 ? true : false,
+        // publicPath: config.fullPath,
+        proxy: {
+            '*': {
+                'target': config.url,
+                'secure': false
+            },
+            '/': {
+                target: config.url,
+                secure: false
+            }
+        },
+    },
     plugins: [
         new MiniCssExtract({
             filename: './css/dist/main.min.css'
-        })
+        }),
+        new BrowserSync( {
+                proxy: config.url,
+                files: [
+                    '**/*.php'
+                ],
+                reloadDelay: 0
+            }
+        )
     ],
     optimization: {
         minimizer: [
