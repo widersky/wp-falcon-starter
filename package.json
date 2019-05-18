@@ -24,6 +24,8 @@
         "@babel/preset-env": "^7.4.4",
         "babel-loader": "^8.0.6",
         "babel-preset-env": "^1.7.0",
+        "browser-sync": "^2.26.5",
+        "browser-sync-webpack-plugin": "^2.2.2",
         "css-loader": "^2.1.1",
         "mini-css-extract-plugin": "^0.6.0",
         "node-sass": "^4.12.0",
