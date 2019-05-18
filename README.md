@@ -32,7 +32,7 @@ Start: `npm install` \
 Develop: `npm run start` \
 Build: `npm run build`
 
-> You need to run `npm run build` or `npm run dev` task to make theme usable in browser (there are two `./*/dist/` folders disabled from repository)
+> You need to run `npm run build` or `npm run start` task to make theme usable in browser (there are two `./*/dist/` folders disabled from repository)
 
 ## 🌪 How to remove demo content
 
