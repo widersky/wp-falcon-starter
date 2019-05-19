@@ -24,10 +24,65 @@
         <div class="row">
             <div class="col-100">
                 <div class="docs">
-                    <p class="info info--neutral">
-                        <code>showMe($object)</code> - shows PHP object output in nice format <br>
-                        <code>putIMG($imgID)</code> - generates responsive friendly img markup with srcset value (this may speed up your site drastically!) <br>
-                    </p>
+                    <div class="info info--neutral">
+                        <table>
+                            <tr>
+                                <td><code>showMe($object)</code></td>
+                                <td>shows PHP object output in nice format</td>
+                            </tr>
+                            <tr>
+                                <td><code>putIMG($imgID)</code></td>
+                                <td>generates responsive friendly img markup with srcset value (this may speed up your site drastically!)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 2. SCSS Mixins -->
+    <section class="section">
+        <div class="row">
+            <div class="col-100">
+                <h2>2. SCSS Mixins</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-100">
+                <div class="docs">
+                    <div class="info info--neutral">
+                        <table>
+                            <tr>
+                                <td><code>animate($what, $howLong, $easing)</code></td>
+                                <td>makes element animated (all arguments are optional with defaults set to <code class="alt">all, .3s, ease</code>)</td>
+                            </tr>
+                            <tr>
+                                <td><code>square($size)</code></td>
+                                <td>makes an square with a side equal to <code class="alt">$size</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>circle($size, $radius)</code></td>
+                                <td>makes an circle with a diameter equal to <code class="alt">$size</code>, <code class="alt">$radius</code> is optional here</td>
+                            </tr>
+                            <tr>
+                                <td><code>font-size($size)</code></td>
+                                <td>generates font-size attribute based on rem with px fallback for unsupported browsers. <code class="alt">$size</code> is required</td>
+                            </tr>
+                            <tr>
+                                <td><code>hardware($backface, $perspective)</code></td>
+                                <td>makes element animations hardware-accelerated to prevent flickering and other bad things (all arguments are optional with defaults set to <code class="alt">true, 1000</code>)</td>
+                            </tr>
+                            <tr>
+                                <td><code>pseudo($display, $position, $content)</code></td>
+                                <td>adds usually most needed attributes for <code class="alt">::before</code> and <code class="alt">::after</code> pseudoelements (all arguments are optional with defaults set to <code class="alt">block, absolute, ''</code>)</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -174,6 +229,26 @@
             <div class="col-25"><span>First 25% centered</span></div>
             <div class="col-25"><span>Second 25% centered</span></div>
         </div>
+
+        <!-- Space between -->
+        <div class="row">
+            <div class="col-100">
+                <div class="docs">
+                    <p class="info info--neutral">
+                        Use <code>row--space</code> modifier to make some space between columns inside row.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row row--space">
+            <div class="col-25"><span>25%</span></div>
+            <div class="col-25"><span>25%</span></div>
+        </div>
+        <div class="row row--space">
+            <div class="col-25"><span>25%</span></div>
+            <div class="col-40"><span>40%</span></div>
+            <div class="col-25"><span>25%</span></div>
+        </div>
     </section>
 
 
@@ -199,7 +274,7 @@
         <div class="row">
             <div class="col-100">
                 <div class="siema">
-                    <div class="siema__slide">Siema slide - 1</div>
+                    <div class="siema__slide">Siema slide - 1 (drag me!)</div>
                     <div class="siema__slide">Siema slide - 2</div>
                     <div class="siema__slide">Siema slide - 3</div>
                     <div class="siema__slide">Siema slide - 4</div>

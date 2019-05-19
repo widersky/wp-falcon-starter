@@ -2,6 +2,7 @@ html, body {
     font-family: $font-base-families;
     padding: 0;
     margin: 0;
+    @include font-size(16);
 }
 
 * {
