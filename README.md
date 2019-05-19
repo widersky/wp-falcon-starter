@@ -18,35 +18,28 @@ Just start the right things! 🎉
 ## 🕵️‍♂️ What's in functions.php?
 
 * Support for posts thumbnails
-* Custom function for responsive images (srcset generation)
 * Stupidly simple function to view PHP objects nicely
 * Disabled Gutenberg `(I think it's necessary until Gutenberg it's *really* stable)`
 * For safety there is WP version and errors on login page removed
-* Disabled whole wp-head crap (Emojis, Gutenberg blocks CSS, REST API etc.)
+* Disabled whole wp-head crap (Emojis, Gutenberg blocks CSS, REST APIs etc.)
 * Custom thumbnail sizes (most popular sizes included)
 * Enabled possibility to upload SVG files to media library
 
 ## 💻 How to develop?
 
-First, you would like to remove things that's not necessary for you. This includes:
+First, it's possible you would like to remove things that's not necessary for you. This includes:
 
-* Default slider JavaScript plugin,
-* Default gallery JavaScript plugin,
-* CSS demo styling,
-* Demo content
+* Default JavaScript slider lib (['Siema' by Paweł Grzybek](https://github.com/pawelgrzybek/siema)) - just remove import from source `main.js` file
+* CSS demo styling - comment / remove `@import './01-vendors/vendors.demo';` line in `./src/main.scss`
+* Demo content - remove HTML markup from `index.php`
 
 Then, change `config.url` to proper in `webpack.config.js` \
 \
 Start: `npm install` \
-Develop: `npm run start` \
+Develop: `npm run start` - fires files watching and compilling on live server \
 Build: `npm run build`
 
 > You need to run `npm run build` or `npm run start` task to make theme usable in browser (there are two `./*/dist/` folders disabled from repository)
-
-## 🌪 How to remove demo content
-
-* Comment `@import './01-vendors/vendors.demo';` line in `./src/main.scss` to disable demo related styles
-* Remove HTML from `index.php`
 
 ## 🗨 Questions? Suggestions?
 
