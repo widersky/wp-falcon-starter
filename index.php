@@ -32,7 +32,7 @@
                             </tr>
                             <tr>
                                 <td><code>putIMG($imgID)</code></td>
-                                <td>generates responsive friendly img markup with srcset value (this may speed up your site drastically!)</td>
+                                <td>(Not yet included!) generates responsive friendly img markup with srcset value (this may speed up your site drastically!)</td>
                             </tr>
                         </table>
                     </div>
