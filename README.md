@@ -28,7 +28,14 @@ Just start the right things! 🎉
 
 ## 💻 How to develop?
 
-First, change `config.url` to proper in `webpack.config.js` \
+First, you would like to remove things that's not necessary for you. This includes:
+
+* Default slider JavaScript plugin,
+* Default gallery JavaScript plugin,
+* CSS demo styling,
+* Demo content
+
+Then, change `config.url` to proper in `webpack.config.js` \
 \
 Start: `npm install` \
 Develop: `npm run start` \

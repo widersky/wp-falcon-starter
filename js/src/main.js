@@ -1,4 +1,4 @@
-// import something
+import Siema from 'siema';
 
 class Main {
 
@@ -9,9 +9,13 @@ class Main {
     init () {
         console.log(`Welcome to WP Starter Theme ${this.version}!`);
         console.log('Everything looks good, feel free to edit this theme!');
+
+        new Siema({ selector: '.siema', duration: 200, easing: 'ease-out', threshold: 30 });
     }
 
 }
 
-const main = new Main;
-main.init();
+document.addEventListener('DOMContentLoaded', () => {
+    const main = new Main;
+    main.init();
+});

@@ -8,7 +8,7 @@
 
 //  Columns by percentage (10% step)
 $i: 5;
-@while $i < 100 {
+@while $i <= 100 {
     .col-#{$i} {
         width: #{$i + '%'};
         max-width: #{$i + '%'};

@@ -8,7 +8,7 @@
 
 
 // Disable admin bar visibility
-show_admin_bar( false );
+show_admin_bar(false);
 
 
 // Disable Gutenberg from admin panel...
@@ -18,7 +18,7 @@ add_filter('use_block_editor_for_post', '__return_false');
 // ... and frontend head
 add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 function wps_deregister_styles() {
-    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style('wp-block-library');
 }
 
 
@@ -82,10 +82,22 @@ function removeWPLoginErrors() {
 add_filter('login_errors', 'removeWPLoginErrors');
 
 
+// Disable XML-RPC
+add_filter('xmlrpc_enabled', '__return_false');
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
+
 // Remove crap from head
 remove_action('wp_head', 'rsd_link');                                   // Windows Live Writer remove
 remove_action('wp_head', 'wlwmanifest_link');                           // Windows Live Writer remove
 remove_action('wp_head', 'wp_generator');                               // Remove WP version
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );               // removes rel=shortlink from head that google ignores
+remove_action('wp_head', 'feed_links', 2);                              // remove RSS feed links
+remove_action('wp_head', 'feed_links_extra', 3);                        // removes all extra RSS feed links
+remove_action('wp_head', 'index_rel_link');                             // remove link to index page
+remove_action('wp_head', 'start_post_rel_link', 10, 0);                 // remove random post link
+remove_action('wp_head', 'parent_post_rel_link', 10, 0);                // remove parent post link
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);             // remove the next and previous post links
 
 
 // remove Emojis
@@ -96,10 +108,12 @@ remove_action('admin_print_styles', 'print_emoji_styles');
 
 
 // remove dns-prefetch
-remove_action( 'wp_head', 'wp_resource_hints', 2 );
+remove_action('wp_head', 'wp_resource_hints', 2);
 
 
 // Remove the REST API endpoint and other related things
+add_filter('json_enabled', '__return_false');
+add_filter('json_jsonp_enabled', '__return_false');
 remove_action('rest_api_init', 'wp_oembed_register_route');             // endpoint
 remove_action('wp_head', 'rest_output_link_wp_head');                   // rel='https://api.w.org/' out from head
 remove_action('wp_head', 'wp_oembed_add_discovery_links');              // REST from default filters

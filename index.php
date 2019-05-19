@@ -176,5 +176,37 @@
         </div>
     </section>
 
+
+    <!-- 3. INCLUDED LIBS -->
+    <section class="section">
+        <div class="row">
+            <div class="col-100">
+                <h2>3. Included libs</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-100">
+                <div class="docs">
+                    <p class="info info--neutral">
+                        There is nice lib in main.js included by default: <a href="https://github.com/pawelgrzybek/siema">Siema slider</a>. For now, just this ;)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <div class="siema">
+                    <div class="siema__slide">Siema slide - 1</div>
+                    <div class="siema__slide">Siema slide - 2</div>
+                    <div class="siema__slide">Siema slide - 3</div>
+                    <div class="siema__slide">Siema slide - 4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <?php // get_sidebar(); ?>
 <?php get_template_part('parts/base/footer'); ?>

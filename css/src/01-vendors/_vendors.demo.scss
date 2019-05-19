@@ -40,6 +40,8 @@ h6 { font-size: .5vw }
         border-radius: 3px;
         margin-top: 10px;
         margin-bottom: 10px;
+        font-size: 12px;
+        text-transform: uppercase;
     }
 }
 
@@ -63,6 +65,13 @@ section:last-of-type {
 
         &--neutral { background-color: #BDE5F8 }
         &--warning { background-color: #FEEFB3 }
+
+        a {
+            color: rgba(0,0,0,.4);
+            text-decoration: none;
+
+            &:hover { color: rgba(0,0,0,.8) }
+        }
     }
 
     code {
@@ -73,6 +82,7 @@ section:last-of-type {
         border-radius: 3px;
         background-color: #0e111a;
         color: rgba(255,255,255,.7);
+        white-space: nowrap;
     }
 
 }
@@ -82,4 +92,11 @@ section:last-of-type {
     height: 2px;
     background-color: #aaa;
     margin: 80px 0 50px;
+}
+
+.siema__slide {
+    text-align: center;
+    line-height: 300px;
+    background-color: #ddd;
+    border-radius: 3px;
 }
