@@ -62,8 +62,8 @@ function enqueueStyles() {
     $mainJS = get_template_directory_uri() . '/js/dist/main.js';
     $mainCSS = get_template_directory_uri() . '/css/dist/main.min.css';
 
-    wp_enqueue_style('style', $mainCSS, $version, true);
-    wp_enqueue_script('script', $mainJS, $version, true);
+    wp_enqueue_style('styles', $mainCSS, $version, true);
+    wp_enqueue_script('scripts', $mainJS, $version, true);
 }
 add_action('wp_enqueue_scripts', 'enqueueStyles');
 

@@ -1,4 +1,5 @@
 <?php get_template_part('parts/base/header'); ?>
+<?php get_template_part('parts/subpages/home'); ?>
 
 	<!-- DEMO -->
 
