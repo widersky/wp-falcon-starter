@@ -8,3 +8,12 @@ html, body {
 * {
     box-sizing: border-box;
 }
+
+pre {
+    border: 1px solid #faf2ce;
+    background-color: #fcf8e4;
+    color: rgba(0,0,0,.7);
+    box-sizing: border-box;
+    padding: 20px 25px;
+    border-radius: 3px;
+}

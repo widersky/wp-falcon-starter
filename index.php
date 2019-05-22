@@ -1,4 +1,5 @@
 <?php get_template_part('parts/base/header'); ?>
+<?php get_template_part('parts/subpages/home'); ?>
 
 	<!-- DEMO -->
 
@@ -31,8 +32,8 @@
                                 <td>shows PHP object output in nice format</td>
                             </tr>
                             <tr>
-                                <td><code>putIMG($imgID)</code></td>
-                                <td>(Not yet included!) generates responsive friendly img markup with srcset value (this may speed up your site drastically!)</td>
+                                <td><code>putIMG($imgID, $sizes)</code></td>
+                                <td>(TESTING) Generates responsive-friendly <code class="alt">img</code> tag with srcset attribute (this can drastically improve the speed of your website loading). <code class="alt">$sizes</code> is optional here, but allows you to control precisely how images behave.</td>
                             </tr>
                         </table>
                     </div>
