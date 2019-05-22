@@ -27,14 +27,14 @@ add_theme_support('post-thumbnails');
 
 
 // Additional thumbnails sizes (name, x, y, hardmode?)
-add_image_size('size-4k', 3840, 2160, true);
-add_image_size('size-qhd', 2560, 1440, true);
-add_image_size('size-fullhd', 1920, 1080, true);
-add_image_size('size-hd', 1366, 768, true);
-add_image_size('size-xga', 1024, 768, true);
-add_image_size('size-svga', 800, 600, true);
-add_image_size('size-small', 640, 480, true);
-add_image_size('size-verysmall', 320, 240, true);
+add_image_size('size-4k', '3840', '2160', true);
+add_image_size('size-qhd', '2560', '1440', true);
+add_image_size('size-fullhd', '1920', '1080', true);
+add_image_size('size-hd', '1366', '768', true);
+add_image_size('size-xga', '1024', '768', true);
+add_image_size('size-svga', '800', '600', true);
+add_image_size('size-small', '640', '480', true);
+add_image_size('size-verysmall', '320', '240', true);
 
 
 // Add title tag support
@@ -129,11 +129,30 @@ remove_action('template_redirect', 'rest_output_link_header', 11);      // REST 
 // Nicely show PHP objects
 function showMe($output) {
     echo '<pre>';
-    print_r($showMe);
+    print_r($output);
     echo '</pre>';
 }
 
 // Builds and displays image in responsive-friendly format (with srcset attribute)
-function putIMG($imgID) {
-    // WIP
+function putIMG($imgID, $sizes = '100vw') {
+    global $_wp_additional_image_sizes;
+
+    $definedImageSizes = get_intermediate_image_sizes();
+    $originalIMGSrc = wp_get_attachment_image_src($imgID)[0];
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https:" : "http:";
+    $comma = ',';
+
+    // Get image sizes
+    foreach($definedImageSizes as $size) {
+        $availableSizes[$size] = wp_get_attachment_image_src($imgID, $size);
+    }
+
+    // Build srcset string
+    foreach ($availableSizes as $key => $size) {
+        end($availableSizes);
+        if ($key === key($availableSizes)) $comma = '';
+        $toSrcSet .= $protocol . $size[0] . ' ' . $size[1] . 'w' . $comma . ' ';
+    }
+
+    echo '<img class="img-responsive" src="' . $originalIMGSrc . '" srcset="' . $toSrcSet . '" sizes="' . $sizes . '" alt="' . get_post_meta($image_id, '_wp_attachment_image_alt', TRUE) . '">';
 }
