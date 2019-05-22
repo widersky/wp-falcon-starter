@@ -24,6 +24,7 @@ Just start the right things! 🎉
 * Disabled whole wp-head crap (Emojis, Gutenberg blocks CSS, REST APIs etc.)
 * Custom thumbnail sizes (most popular sizes included)
 * Enabled possibility to upload SVG files to media library
+* Custom function to easly display img with srcset attribute for better website loading times (especially for mobile)
 
 ## 💻 How to develop?
 
