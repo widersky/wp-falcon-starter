@@ -1,4 +1,5 @@
 import Siema from 'siema';
+import Pidgeon from './pidgeon/Pidgeon';
 
 class Main {
 
@@ -10,7 +11,16 @@ class Main {
         console.log(`Welcome to WP Starter Theme ${this.version}!`);
         console.log('Everything looks good, feel free to edit this theme!');
 
-        new Siema({ selector: '.siema', duration: 200, easing: 'ease-out', threshold: 30 });
+        new Siema({
+            selector: '.siema',
+            duration: 200,
+            easing: 'ease-out',
+            threshold: 30 
+        });
+
+        new Pidgeon({
+            selector: '.pidgeon'
+        });
     }
 
 }

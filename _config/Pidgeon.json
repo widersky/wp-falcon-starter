@@ -1,0 +1,49 @@
+{
+    "config": {
+        "testing": true
+    },
+    "fields": [
+        {
+            "type": "text",
+            "label": "Your name",
+            "name": "personname",
+            "required": true,
+            "size": 33
+        },
+        {
+            "type": "email",
+            "label": "Your e-mail",
+            "name": "personmail",
+            "required": true,
+            "size": 33
+        },
+        {
+            "type": "phone",
+            "label": "Your phone number",
+            "name": "phone",
+            "required": true,
+            "size": 33
+        },
+        {
+            "type": "text",
+            "label": "Topic",
+            "name": "topic",
+            "required": true,
+            "size": 100
+        },
+        {
+            "type": "textarea",
+            "label": "Message",
+            "name": "message",
+            "required": true,
+            "size": 100
+        },
+        {
+            "type": "submit",
+            "label": "Submit",
+            "name": "submitform",
+            "required": true,
+            "size": 100
+        }
+    ]
+}

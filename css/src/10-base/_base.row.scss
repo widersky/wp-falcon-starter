@@ -2,7 +2,8 @@
     display: flex;
     flex-grow: 1;
     flex-direction: row;
-    width: $baseWidth;
+    width: calc(100% + 30px);
+    margin: 0 -15px;
 
     &--pull-right { justify-content: flex-end }
     &--center { justify-content: center }
