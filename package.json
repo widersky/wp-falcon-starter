@@ -36,6 +36,7 @@
         "webpack-cli": "^3.3.3"
     },
     "dependencies": {
+        "bootstrap": "^4.3.1",
         "siema": "^1.5.1"
     }
 }
