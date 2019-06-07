@@ -3,6 +3,7 @@ const UglifyJS = require('uglifyjs-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 const BrowserSync = require('browser-sync-webpack-plugin');
+const CleanTerminalPlugin = require('clean-terminal-webpack-plugin');
 
 const config = {
     url: 'http://purewp.local/'
@@ -42,7 +43,6 @@ module.exports = {
         compress: true,
         port: 9000,
         https: config.url.indexOf('https') > -1 ? true : false,
-        // publicPath: config.fullPath,
         proxy: {
             '*': {
                 'target': config.url,
@@ -55,6 +55,7 @@ module.exports = {
         },
     },
     plugins: [
+        new CleanTerminalPlugin(),
         new MiniCssExtract({
             filename: './css/dist/main.min.css'
         }),

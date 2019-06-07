@@ -119,6 +119,11 @@ remove_action('wp_head', 'rest_output_link_wp_head');                   // rel='
 remove_action('wp_head', 'wp_oembed_add_discovery_links');              // REST from default filters
 remove_action('template_redirect', 'rest_output_link_header', 11);      // REST link out from head
 
+// EP Embed JS disable
+function deregisterScripts(){
+    wp_deregister_script('wp-embed');
+}
+add_action('wp_footer', 'deregisterScripts');
 
 /**
  * 
