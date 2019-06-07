@@ -59,8 +59,8 @@ add_filter('upload_mimes', 'addFileTypes', 1, 1);
 // Register styles and scripts
 function enqueueStyles() {
     $version = '0.2';
-    $mainJS = get_template_directory_uri() . '/js/dist/main.js';
-    $mainCSS = get_template_directory_uri() . '/css/dist/main.min.css';
+    $mainJS = get_template_directory_uri() . '/dist/js/main.js';
+    $mainCSS = get_template_directory_uri() . '/dist/css/main.min.css';
 
     wp_enqueue_style('styles', $mainCSS, $version, true);
     wp_enqueue_script('scripts', $mainJS, $version, true);

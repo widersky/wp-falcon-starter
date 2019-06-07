@@ -10,14 +10,14 @@ const config = {
 }
 
 module.exports = {
-    entry: ['./js/src/main.js', './css/src/main.scss'],
+    entry: ['./src/js/main.js', './src/css/main.scss'],
     stats: {
         colors: true,
         errors: true,
         warnings: true
     },
     output: {
-        filename: './js/dist/main.js',
+        filename: './dist/js/main.js',
         path: path.resolve(__dirname)
     },
     module: {
@@ -35,6 +35,17 @@ module.exports = {
             {
                 test: /\.(sass|scss)$/,
                 use: [MiniCssExtract.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+                use: [{ loader: 'file-loader', 
+                    options: { 
+                        outputPath: './dist/img',
+                        name: '[name].[ext]',
+                        path: path.resolve(__dirname, 'dist'),
+                        publicPath: '../../dist/img' 
+                    }
+                }] 
             }
         ]
     },
@@ -55,9 +66,11 @@ module.exports = {
         },
     },
     plugins: [
-        new CleanTerminalPlugin(),
+        new CleanTerminalPlugin({
+            message: 'Terminal cleaned'
+        }),
         new MiniCssExtract({
-            filename: './css/dist/main.min.css'
+            filename: './dist/css/main.min.css'
         }),
         new BrowserSync( {
                 proxy: config.url,
@@ -74,7 +87,12 @@ module.exports = {
                 cache: true,
                 parallel: true
             }),
-            new OptimizeCSSAssets({})
+            new OptimizeCSSAssets({
+                cssProcessor: require('cssnano'),
+                cssProcessorPluginOptions: {
+                    preset: ['default', { discardComments: { removeAll: true } }],
+                }
+            })
         ]
     }
 };
