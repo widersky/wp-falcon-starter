@@ -5,10 +5,6 @@ html, body {
     @include font-size(16);
 }
 
-* {
-    box-sizing: border-box;
-}
-
 pre {
     border: 1px solid #faf2ce;
     background-color: #fcf8e4;
@@ -16,11 +12,4 @@ pre {
     box-sizing: border-box;
     padding: 20px 25px;
     border-radius: 3px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    width: $baseWidth;
 }

@@ -102,27 +102,12 @@
 
     <div class="line"></div>
 
-
-    <!-- PERSEUS CSS -->
-
-
-    <header class="section section--header">
-        <div class="container">
-            <div class="row">
-                <div class="col-100">
-                    <h5>This demo below shows included PerseusCSS framework. Feel free to use something else, if you want but... just look at this, isn't it sufficient?</h5>
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-    <!-- 1. GRID -->
+    <!-- 2. INCLUDED LIBS -->
     <section class="section">
         <div class="container">
             <div class="row">
-                <div class="col-100">
-                    <h2>1. Grid</h2>
+                <div class="col-12">
+                    <h2>2. Included libs</h2>
                 </div>
             </div>
         </div>
@@ -131,164 +116,7 @@
     <section class="section">
         <div class="container">
             <div class="row">
-                <div class="col-100">
-                    <div class="docs">
-                        <p class="info info--neutral">
-                            A row may have a specified width or occupy the full width of a page. In the second case, use a <code>row-full</code> instead of a <code>row</code> class.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--cols">
-        <div class="container">
-            <div class="row">
-                <div class="col-10"><span>10%</span></div>
-                <div class="col-10"><span>10%</span></div>
-                <div class="col-10"><span>10%</span></div>
-                <div class="col-10"><span>10%</span></div>
-                <div class="col-10"><span>10%</span></div>
-                <div class="col-10"><span>10%</span></div>
-                <div class="col-10"><span>10%</span></div>
-                <div class="col-10"><span>10%</span></div>
-                <div class="col-10"><span>10%</span></div>
-                <div class="col-10"><span>10%</span></div>
-            </div>
-            <div class="row">
-                <div class="col-20"><span>20%</span></div>
-                <div class="col-20"><span>20%</span></div>
-                <div class="col-20"><span>20%</span></div>
-                <div class="col-20"><span>20%</span></div>
-                <div class="col-20"><span>20%</span></div>
-            </div>
-            <div class="row">
-                <div class="col-25"><span>25%</span></div>
-                <div class="col-25"><span>25%</span></div>
-                <div class="col-25"><span>25%</span></div>
-                <div class="col-25"><span>25%</span></div>
-            </div>
-            <div class="row">
-                <div class="col-33"><span>33%</span></div>
-                <div class="col-33"><span>33%</span></div>
-                <div class="col-33"><span>33%</span></div>
-            </div>
-            <div class="row">
-                <div class="col-33"><span>33%</span></div>
-                <div class="col-66"><span>66%</span></div>
-            </div>
-            <div class="row">
-                <div class="col-50"><span>50%</span></div>
-                <div class="col-50"><span>50%</span></div>
-            </div>
-            <div class="row">
-                <div class="col-25"><span>25%</span></div>
-                <div class="col-75"><span>75%</span></div>
-            </div>
-            <div class="row">
-                <div class="col-25"><span>25%</span></div>
-                <div class="col-50"><span>50%</span></div>
-                <div class="col-25"><span>25%</span></div>
-            </div>
-            <div class="row">
-                <div class="col-100"><span>100%</span></div>
-            </div>
-            <div class="row">
-                <div class="col"><span>auto</span></div>
-                <div class="col"><span>auto</span></div>
-                <div class="col"><span>auto</span></div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- 2. GRID MANIPULATION -->
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-100">
-                    <h2>2. Grid manipulation</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--cols">
-        <div class="container">
-            <!-- Pull right -->
-            <div class="row">
-                <div class="col-100">
-                    <div class="docs">
-                        <p class="info info--neutral">
-                            Use <code>row--pull-right</code> modifier to stick columns to right side of row.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row row--pull-right">
-                <div class="col-25"><span>25% pulled right</span></div>
-            </div>
-            <div class="row row--pull-right">
-                <div class="col-50"><span>50% pulled right</span></div>
-            </div>
-
-            <!-- Center -->
-            <div class="row">
-                <div class="col-100">
-                    <div class="docs">
-                        <p class="info info--neutral">
-                            Use <code>row--center</code> modifier to center columns inside row.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row row--center">
-                <div class="col-75"><span>75% centered</span></div>
-            </div>
-            <div class="row row--center">
-                <div class="col-25"><span>First 25% centered</span></div>
-                <div class="col-25"><span>Second 25% centered</span></div>
-            </div>
-
-            <!-- Space between -->
-            <div class="row">
-                <div class="col-100">
-                    <div class="docs">
-                        <p class="info info--neutral">
-                            Use <code>row--space</code> modifier to make some space between columns inside row.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row row--space">
-                <div class="col-25"><span>25%</span></div>
-                <div class="col-25"><span>25%</span></div>
-            </div>
-            <div class="row row--space">
-                <div class="col-25"><span>25%</span></div>
-                <div class="col-40"><span>40%</span></div>
-                <div class="col-25"><span>25%</span></div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- 3. INCLUDED LIBS -->
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-100">
-                    <h2>3. Included libs</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-100">
+                <div class="col-12">
                     <div class="docs">
                         <p class="info info--neutral">
                             There is nice lib in main.js included by default: <a href="https://github.com/pawelgrzybek/siema">Siema slider</a>. For now, just this ;)
@@ -297,7 +125,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-100">
+                <div class="col-12">
                     <div class="siema">
                         <div class="siema__slide">Siema slide - 1 (drag me!)</div>
                         <div class="siema__slide">Siema slide - 2</div>
@@ -312,7 +140,7 @@
     <section class="section">
         <div class="container">
             <div class="row">
-                <div class="col-100">
+                <div class="col-12">
                     <div class="pidgeon" data-struct="<?php echo get_template_directory_uri(); ?>/_config/Pidgeon.json"></div>
                 </div>
             </div>

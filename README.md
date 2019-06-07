@@ -1,15 +1,16 @@
-# 🛫 WP Starter Theme
+# 🦅 WP Falcon Starter
 
 This is the WordPress starter theme developed to improve themes development process. The main reason to do this theme was make ability to start not from scratch but from that point of the project, what really matters. It's not necessary to invent the wheel every time. 
 
-Just start the right things! 🎉
+Just start from the right things! 🎉
 
 ## 📦 What's inside?
 
 * This theme uses WebPack as their bundler (with live reload and browsersync enabled)
-* SCSS `(with atomic-design oriented structure)`
-* Simple SCSS Framework based on Flexbox model
+* Bootstrap v4 Grid and some small utilities
+* SCSS `(with atomic-design / BEM oriented structure)`
 * Vanilla JavaScript (Babel inside)
+* Siema Slider ([by Paweł Grzybek](https://github.com/pawelgrzybek/siema))
 
 ## ⛔ What's **not** inside?
 
@@ -19,18 +20,21 @@ Just start the right things! 🎉
 
 * Support for posts thumbnails
 * Stupidly simple function to view PHP objects nicely
-* Disabled Gutenberg `(I think it's necessary until Gutenberg it's *really* stable)`
-* For safety there is WP version and errors on login page removed
+* Disabled Gutenberg and everything related to it `(I think it's necessary until Gutenberg it's *really* stable)`
+* For safety there is WP version and errors on login page disabled
 * Disabled whole wp-head crap (Emojis, Gutenberg blocks CSS, REST APIs etc.)
 * Custom thumbnail sizes (most popular sizes included)
 * Enabled possibility to upload SVG files to media library
-* Custom function to easly display img with srcset attribute for better website loading times (especially for mobile)
+* Custom function to easly display img with srcset attribute for better website loading times (especially for mobile, still testing)
+* Disabled `wp-embed.js`
+
+Of course, feel free to re-enable needed things in `functions.php` file.
 
 ## 💻 How to develop?
 
 First, it's possible you would like to remove things that's not necessary for you. This includes:
 
-* Default JavaScript slider lib (['Siema' by Paweł Grzybek](https://github.com/pawelgrzybek/siema)) - just remove import from source `main.js` file
+* Default JavaScript slider lib 'Siema' - just remove import from source `main.js` file
 * CSS demo styling - comment / remove `@import './01-vendors/vendors.demo';` line in `./src/main.scss`
 * Demo content - remove HTML markup from `index.php`
 

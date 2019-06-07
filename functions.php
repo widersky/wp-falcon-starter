@@ -59,8 +59,8 @@ add_filter('upload_mimes', 'addFileTypes', 1, 1);
 // Register styles and scripts
 function enqueueStyles() {
     $version = '0.2';
-    $mainJS = get_template_directory_uri() . '/js/dist/main.js';
-    $mainCSS = get_template_directory_uri() . '/css/dist/main.min.css';
+    $mainJS = get_template_directory_uri() . '/dist/js/main.js';
+    $mainCSS = get_template_directory_uri() . '/dist/css/main.min.css';
 
     wp_enqueue_style('styles', $mainCSS, $version, true);
     wp_enqueue_script('scripts', $mainJS, $version, true);
@@ -119,6 +119,11 @@ remove_action('wp_head', 'rest_output_link_wp_head');                   // rel='
 remove_action('wp_head', 'wp_oembed_add_discovery_links');              // REST from default filters
 remove_action('template_redirect', 'rest_output_link_header', 11);      // REST link out from head
 
+// EP Embed JS disable
+function deregisterScripts(){
+    wp_deregister_script('wp-embed');
+}
+add_action('wp_footer', 'deregisterScripts');
 
 /**
  * 
