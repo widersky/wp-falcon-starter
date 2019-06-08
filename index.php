@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-100">
-                    <h1>You just successfully installed WP Starter Theme! 🎉</h1>
+                    <h1>You just successfully installed WP Falcon Starter! 🎉</h1>
                     <h5>This theme includes some helpful things, especially PHP functions, SCSS variables and mixins. Let's take a look at them.</h5>
                 </div>
             </div>
