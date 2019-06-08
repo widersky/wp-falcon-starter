@@ -144,7 +144,6 @@ function putIMG($imgID, $sizes = '100vw') {
 
     $definedImageSizes = get_intermediate_image_sizes();
     $originalIMGSrc = wp_get_attachment_image_src($imgID)[0];
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https:" : "http:";
     $comma = ',';
 
     // Get image sizes
@@ -156,8 +155,49 @@ function putIMG($imgID, $sizes = '100vw') {
     foreach ($availableSizes as $key => $size) {
         end($availableSizes);
         if ($key === key($availableSizes)) $comma = '';
-        $toSrcSet .= $protocol . $size[0] . ' ' . $size[1] . 'w' . $comma . ' ';
+        $toSrcSet .= $size[0] . ' ' . $size[1] . 'w' . $comma . ' ';
     }
 
     echo '<img class="img-responsive" src="' . $originalIMGSrc . '" srcset="' . $toSrcSet . '" sizes="' . $sizes . '" alt="' . get_post_meta($image_id, '_wp_attachment_image_alt', TRUE) . '">';
+}
+
+
+// TODO: rewrite responsive images to achieve function that could easly generate this markup:
+/*
+<picture>
+  <source media="(min-width: 40em)"
+    srcset="big.jpg 1x, big-hd.jpg 2x">
+  <source 
+    srcset="small.jpg 1x, small-hd.jpg 2x">
+  <img src="fallback.jpg" alt="">
+</picture>
+ */
+function img ($ID, $additionalSizes = false) {
+
+    // Example:
+    // $additionalSizes = array( 'min-width: 40' => 345 );
+
+    global $_wp_additional_image_sizes;
+
+    $definedImageSizes = get_intermediate_image_sizes();
+    $originalIMGSrc = wp_get_attachment_image_src($ID)[0];
+    $comma = ',';
+
+    // Get image sizes
+    foreach($definedImageSizes as $size) {
+        $availableSizes[$size] = wp_get_attachment_image_src($ID, $size);
+    }
+
+    // Build srcset string
+    foreach ($availableSizes as $key => $size) {
+        end($availableSizes);
+        if ($key === key($availableSizes)) $comma = '';
+        $toSrcSet .= $size[0] . ' ' . $size[1] . 'w' . $comma . ' ';
+    }
+
+    echo '<picture>
+        <source srcset="' . $toSrcSet . '">
+        <img src="' . $originalIMGSrc . '">
+    </picture>';
+
 }
