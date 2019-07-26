@@ -8,9 +8,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.5;
 }
 
-h1, h5 {
-    text-align: center;
-}
+h1, h5 { text-align: center }
 
 h1 {
     @include font-size(48);
@@ -28,9 +26,24 @@ h4 { @include font-size(24); }
 h5 { @include font-size(20); }
 h6 { @include font-size(18); }
 
-section:last-of-type {
-    margin-bottom: 80px;
+* { box-sizing: border-box }
+
+.section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30px auto 30px;
+
+    &:last-of-type { margin-bottom: 80px }
+
+    & > .container {
+        display: flex;
+        flex-direction: column;
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
 }
+
+table { width: 100% }
 
 .docs {
     width: 100%;
@@ -92,9 +105,7 @@ section:last-of-type {
 
 }
 
-img {
-    margin: 10px 0;
-}
+img { margin: 10px 0 }
 
 .line {
     width: 100%;

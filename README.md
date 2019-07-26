@@ -32,7 +32,6 @@ Of course, feel free to re-enable needed things in `functions.php` file.
 
 First, it's possible you would like to remove things that's not necessary for you. This includes:
 
-* Default JavaScript slider lib 'Siema' - just remove import from source `main.js` file
 * CSS demo styling - comment / remove `@import './01-vendors/vendors.demo';` line in `./src/main.scss`
 * Demo content - remove HTML markup from `index.php`
 
