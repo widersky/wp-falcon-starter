@@ -31,10 +31,10 @@
 }
 
 
-// Make square easly
-@mixin square($size) {
-    width: $size;
-    height: $size;
+// Make rectangle / square easly
+@mixin rect($sizeX, $sizeY: $sizeX) {
+    width: $sizeX;
+    height: $sizeY;
 }
 
 
@@ -42,4 +42,12 @@
 @mixin circle($size, $radius: $size / 2) {
     @include square($size);
     border-radius: $radius;
+}
+
+// Make rounded corners easly
+@mixin round($tl, $tr: $tl, $br: $tl, $bl: $tl) {
+    border-top-left-radius: $tl;
+    border-top-right-radius: $tr;
+    border-bottom-right-radius: $br;
+    border-bottom-left-radius: $bl;
 }

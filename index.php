@@ -27,8 +27,8 @@
                             <td>shows PHP object output in nice format</td>
                         </tr>
                         <tr>
-                            <td><code>putIMG($imgID, $sizes)</code></td>
-                            <td>(TESTING) Generates responsive-friendly <code class="alt">img</code> tag with srcset attribute (this can drastically improve the speed of your website loading). <code class="alt">$sizes</code> is optional here, but allows you to control precisely how images behave.</td>
+                            <td><code>putIMG($imageID, $size)</code></td>
+                            <td>Generates responsive-friendly <code class="alt">img</code> tag with srcset attribute (this can drastically improve the speed of your website loading). <code class="alt">$size</code> is optional here, but allows you to control precisely how images behave.</td>
                         </tr>
                     </table>
                 </div>
@@ -54,8 +54,8 @@
                             <td>makes element animated (all arguments are optional with defaults set to <code class="alt">all, .3s, ease</code>)</td>
                         </tr>
                         <tr>
-                            <td><code>square($size)</code></td>
-                            <td>makes an square with a side equal to <code class="alt">$size</code></td>
+                            <td><code>rect($sizeX, $sizeY)</code></td>
+                            <td>makes an rectangle with a given sizes. <code class="alt">$sizeY</code> is optional here. Passing only <code class="alt">$sizeX</code> gives you a square.</td>
                         </tr>
                         <tr>
                             <td><code>circle($size, $radius)</code></td>
@@ -72,6 +72,10 @@
                         <tr>
                             <td><code>pseudo($display, $position, $content)</code></td>
                             <td>adds usually most needed attributes for <code class="alt">::before</code> and <code class="alt">::after</code> pseudoelements (all arguments are optional with defaults set to <code class="alt">block, absolute, ''</code>)</td>
+                        </tr>
+                        <tr>
+                            <td><code>round($topleft, $topright, $bottomright, $bottomleft)</code></td>
+                            <td>adds rounded corners to element. Only first parameter is required here - makes every corner the same size rounded.</td>
                         </tr>
                     </table>
                 </div>
