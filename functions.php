@@ -139,65 +139,10 @@ function showMe($output) {
 }
 
 // Builds and displays image in responsive-friendly format (with srcset attribute)
-function putIMG($imgID, $sizes = '100vw') {
-    global $_wp_additional_image_sizes;
+function putIMG ($imageID, $size = 'medium') {
+    $imageURL = wp_get_attachment_image_url($imageID, $size);
+    $imageSrcSet = wp_get_attachment_image_srcset($imageID, $size);
+    $imageSizes = wp_get_attachment_image_sizes($imageID, $size);
 
-    $definedImageSizes = get_intermediate_image_sizes();
-    $originalIMGSrc = wp_get_attachment_image_src($imgID)[0];
-    $comma = ',';
-
-    // Get image sizes
-    foreach($definedImageSizes as $size) {
-        $availableSizes[$size] = wp_get_attachment_image_src($imgID, $size);
-    }
-
-    // Build srcset string
-    foreach ($availableSizes as $key => $size) {
-        end($availableSizes);
-        if ($key === key($availableSizes)) $comma = '';
-        $toSrcSet .= $size[0] . ' ' . $size[1] . 'w' . $comma . ' ';
-    }
-
-    echo '<img class="img-responsive" src="' . $originalIMGSrc . '" srcset="' . $toSrcSet . '" sizes="' . $sizes . '" alt="' . get_post_meta($image_id, '_wp_attachment_image_alt', TRUE) . '">';
-}
-
-
-// TODO: rewrite responsive images to achieve function that could easly generate this markup:
-/*
-<picture>
-  <source media="(min-width: 40em)"
-    srcset="big.jpg 1x, big-hd.jpg 2x">
-  <source 
-    srcset="small.jpg 1x, small-hd.jpg 2x">
-  <img src="fallback.jpg" alt="">
-</picture>
- */
-function img ($ID, $additionalSizes = false) {
-
-    // Example:
-    // $additionalSizes = array( 'min-width: 40' => 345 );
-
-    global $_wp_additional_image_sizes;
-
-    $definedImageSizes = get_intermediate_image_sizes();
-    $originalIMGSrc = wp_get_attachment_image_src($ID)[0];
-    $comma = ',';
-
-    // Get image sizes
-    foreach($definedImageSizes as $size) {
-        $availableSizes[$size] = wp_get_attachment_image_src($ID, $size);
-    }
-
-    // Build srcset string
-    foreach ($availableSizes as $key => $size) {
-        end($availableSizes);
-        if ($key === key($availableSizes)) $comma = '';
-        $toSrcSet .= $size[0] . ' ' . $size[1] . 'w' . $comma . ' ';
-    }
-
-    echo '<picture>
-        <source srcset="' . $toSrcSet . '">
-        <img src="' . $originalIMGSrc . '">
-    </picture>';
-
+    echo '<img src="' . $imageURL . '" srcset="' . $imageSrcSet . '" sizes="' . $imageSizes . '" />';
 }

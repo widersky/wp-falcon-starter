@@ -8,9 +8,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.5;
 }
 
-h1, h5 {
-    text-align: center;
-}
+h1, h5 { text-align: center }
 
 h1 {
     @include font-size(48);
@@ -28,14 +26,35 @@ h4 { @include font-size(24); }
 h5 { @include font-size(20); }
 h6 { @include font-size(18); }
 
-section:last-of-type {
-    margin-bottom: 80px;
+* { box-sizing: border-box }
+
+.section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30px auto 30px;
+
+    &:last-of-type { margin-bottom: 40px }
+
+    & > .container {
+        display: flex;
+        flex-direction: column;
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
+}
+
+table {
+    width: 100%; 
+
+    tr {
+        td:first-of-type { width: 40%; }
+    }
 }
 
 .docs {
     width: 100%;
     padding-top: 20px;
-    border-top: 2px dotted #aaa;
+    border-top: 1px dotted #ccc;
     margin-top: 30px;
 
     .info {
@@ -90,22 +109,4 @@ section:last-of-type {
         }
     }
 
-}
-
-img {
-    margin: 10px 0;
-}
-
-.line {
-    width: 100%;
-    height: 2px;
-    background-color: #aaa;
-    margin: 80px 0 50px;
-}
-
-.siema__slide {
-    text-align: center;
-    line-height: 300px;
-    background-color: #ddd;
-    border-radius: 3px;
 }
