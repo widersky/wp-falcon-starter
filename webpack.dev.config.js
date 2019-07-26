@@ -1,23 +1,24 @@
 const path = require('path');
-const UglifyJS = require('uglifyjs-webpack-plugin');
-const MiniCssExtract = require('mini-css-extract-plugin');
-const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSync = require('browser-sync-webpack-plugin');
 const CleanTerminalPlugin = require('clean-terminal-webpack-plugin');
+require('dotenv').config();
 
-const config = {
-    url: 'http://purewp.local/'
-}
+const config = { url: process.env.URL }
 
 module.exports = {
-    entry: ['./src/js/main.js', './src/css/main.scss'],
+    mode: 'development',
+    entry: [
+        './src/js/main.js',
+        './src/css/main.scss'
+    ],
     stats: {
         colors: true,
         errors: true,
         warnings: true
     },
     output: {
-        filename: './dist/js/main.js',
+        filename: 'dist/js/main.js',
         path: path.resolve(__dirname)
     },
     module: {
@@ -33,8 +34,21 @@ module.exports = {
                 }
             },
             {
-                test: /\.(sass|scss)$/,
-                use: [MiniCssExtract.loader, 'css-loader', 'sass-loader']
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require('sass')
+                        }
+                    }
+                ]
             },
             {
                 test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
@@ -67,9 +81,9 @@ module.exports = {
     },
     plugins: [
         new CleanTerminalPlugin({
-            message: 'Terminal cleaned'
+            message: 'Development mode running'
         }),
-        new MiniCssExtract({
+        new MiniCssExtractPlugin({
             filename: './dist/css/main.min.css'
         }),
         new BrowserSync( {
@@ -80,19 +94,5 @@ module.exports = {
                 reloadDelay: 0
             }
         )
-    ],
-    optimization: {
-        minimizer: [
-            new UglifyJS({
-                cache: true,
-                parallel: true
-            }),
-            new OptimizeCSSAssets({
-                cssProcessor: require('cssnano'),
-                cssProcessorPluginOptions: {
-                    preset: ['default', { discardComments: { removeAll: true } }],
-                }
-            })
-        ]
-    }
+    ]
 };

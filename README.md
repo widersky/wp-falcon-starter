@@ -7,10 +7,8 @@ Just start from the right things! 🎉
 ## 📦 What's inside?
 
 * This theme uses WebPack as their bundler (with live reload and browsersync enabled)
-* Bootstrap v4 Grid and some small utilities
-* SCSS `(with atomic-design / BEM oriented structure)`
+* SCSS
 * Vanilla JavaScript (Babel inside)
-* Siema Slider ([by Paweł Grzybek](https://github.com/pawelgrzybek/siema))
 
 ## ⛔ What's **not** inside?
 
@@ -20,7 +18,7 @@ Just start from the right things! 🎉
 
 * Support for posts thumbnails
 * Stupidly simple function to view PHP objects nicely
-* Disabled Gutenberg and everything related to it `(I think it's necessary until Gutenberg it's *really* stable)`
+* Disabled Gutenberg and everything related to it `(not everyone needs it)`
 * For safety there is WP version and errors on login page disabled
 * Disabled whole wp-head crap (Emojis, Gutenberg blocks CSS, REST APIs etc.)
 * Custom thumbnail sizes (most popular sizes included)
@@ -38,11 +36,14 @@ First, it's possible you would like to remove things that's not necessary for yo
 * CSS demo styling - comment / remove `@import './01-vendors/vendors.demo';` line in `./src/main.scss`
 * Demo content - remove HTML markup from `index.php`
 
-Then, change `config.url` to proper in `webpack.config.js` \
+Then, create `.env` file with content:
+```
+URL=http://virtualdomain.test/
+```
 \
 Start: `npm install` \
 Develop: `npm run start` - fires files watching and compilling on live server \
-Build: `npm run build`
+Build: `npm run build` - files created by `npm run start` command will be overwritten
 
 > You need to run `npm run build` or `npm run start` task to make theme usable in browser (there are two `./*/dist/` folders disabled from repository)
 

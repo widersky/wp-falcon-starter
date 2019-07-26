@@ -195,6 +195,7 @@ function img ($ID, $additionalSizes = false) {
         $toSrcSet .= $size[0] . ' ' . $size[1] . 'w' . $comma . ' ';
     }
 
+    // TODO: use wp_get_attachment_image_srcset() maybe?
     echo '<picture>
         <source srcset="' . $toSrcSet . '">
         <img src="' . $originalIMGSrc . '">
